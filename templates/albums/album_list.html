@@ -12,13 +12,13 @@
 
     <main class="main">
         {% for album in albums %}
-            <div class="album">
-                <h3><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h3>
-                <div>by {{ album.artist }}</div><br>
-                <time class="date">added 
-                    {{ album.created_at }}
-                </time>
-            </div>
+        <div class="album">
+            <h3><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h3>
+            <div>by {{ album.artist }}</div><br>
+            <time class="date">added
+                {{ album.created_at }}
+            </time>
+        </div>
         {% endfor %}
     </main>
 
