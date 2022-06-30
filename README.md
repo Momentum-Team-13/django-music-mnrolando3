@@ -11,9 +11,9 @@ The `created_at` field should reflect the time that the album object is created 
 
 Your Django app should allow you to do the following:
 
-- See a list of all albums on the homepage
-- Create a new album
-- See a detail page for one existing album
+- See a list of all albums on the homepage DONE
+- Create a new album DONE
+- See a detail page for one existing album 
 - Edit an existing album
 - Delete an existing album
 

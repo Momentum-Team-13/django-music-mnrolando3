@@ -1,11 +1,11 @@
-main {
+.main {
     border: 5px solid black;
 }
 
-album {
+.album {
     border: 5px solid purple;
 }
 
-date {
+.date {
     border: 5px solid greenyellow;
 }

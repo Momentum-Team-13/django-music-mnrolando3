@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ album.title }}</h1>
+
+<body>
+
+    <main class="main">
+        <div class="album">
+            <div>by {{ album.artist }}</div><br>
+            <time class="date">added 
+                {{ album.created_at }}
+            </time>
+        </div>
+        <br>
+        <div>
+            <a href="{% url 'album_list' %}">Return to All Albums</a>
+        </div>
+    </main>
+
+</body>
+
+{% endblock %}

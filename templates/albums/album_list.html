@@ -1,19 +1,21 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
 <h1>All Albums</h1>
 
-<p>Add New Album</p>
+<div><a href="{% url 'add_album' %}">Add New Album</a></div>
+<br>
 
 <body>
 
     <main class="main">
         {% for album in albums %}
             <div class="album">
-                <h2>{{ album.title }}</h2>
-                <p>{{ album.artist }}</p>
-                <time class="date">
+                <h3><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h3>
+                <div>by {{ album.artist }}</div><br>
+                <time class="date">added 
                     {{ album.created_at }}
                 </time>
             </div>
@@ -21,3 +23,5 @@
     </main>
 
 </body>
+
+{% endblock %}
