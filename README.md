@@ -2,9 +2,10 @@
 
 Create an application to keep track of all the music albums you own. You can choose whatever fields you think an album should have, but it should have at least these three:
 
-- title
-- artist
-- created_at
+- title (CharField)
+- artist (CharField)
+- created_at (DateTimeField; auto_add_now=True)
+- genre(?)
 
 The `created_at` field should reflect the time that the album object is created (not the year that the album was released, although you could certainly create a field for that too!).
 

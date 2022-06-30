@@ -1,0 +1,11 @@
+main {
+    border: 5px solid black;
+}
+
+album {
+    border: 5px solid purple;
+}
+
+date {
+    border: 5px solid greenyellow;
+}

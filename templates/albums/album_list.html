@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>All Albums</h1>
+
+<p>Add New Album</p>
+
+<body>
+
+    <main class="main">
+        {% for album in albums %}
+            <div class="album">
+                <h2>{{ album.title }}</h2>
+                <p>{{ album.artist }}</p>
+                <time class="date">
+                    {{ album.created_at }}
+                </time>
+            </div>
+        {% endfor %}
+    </main>
+
+</body>
