@@ -3,6 +3,7 @@ from django.db import models
 # from users.models import User
 
 
+# Create your models here.
 class Album(models.Model):
     title = models.CharField(maxlength=250, null=True, blank=True)
     artist = models.CharField(maxlength=250, null=True, blank=True)
