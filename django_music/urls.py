@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.conf import settings
 from django.urls import path, include
 from albums import views
-# from django.conf.urls.static import static
+from django.conf.urls.static import static
 
 
 urlpatterns = [
@@ -29,13 +29,17 @@ urlpatterns = [
     path('albums/<int:pk>/delete', views.delete_album, name='delete_album'),
 ]
 
-if settings.DEBUG:
-    import debug_toolbar
-    urlpatterns = [
-        path('__debug__/', include(debug_toolbar.urls)),
-        # static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-        # For django versions before 2.0:
-        # url(r'^__debug__/', include(debug_toolbar.urls)),
-    ] + urlpatterns
+# from Uptact
+# if settings.DEBUG:
+#     import debug_toolbar
+#     urlpatterns = [
+#         path('__debug__/', include(debug_toolbar.urls)),
+#         # For django versions before 2.0:
+#         # url(r'^__debug__/', include(debug_toolbar.urls)),
+#     ] + urlpatterns
 
-# unsure if the add of static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) will work or break things
+
+# from image upload tutorial
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL,
+                          document_root=settings.MEDIA_ROOT)

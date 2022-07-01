@@ -8,7 +8,7 @@
 
     <div class="album">
         <div>by {{ album.artist }}</div>
-        <img src="#">
+        <img src="{{ album.cover.url}}">
         <time class="date">added
             {{ album.created_at }}
         </time>
