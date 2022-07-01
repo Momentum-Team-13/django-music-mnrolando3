@@ -7,8 +7,10 @@
     <h1 class="header">{{ album.title }}</h1>
 
     <div class="album">
-        <div>by {{ album.artist }}</div>
+        {% if album.cover %}
         <img src="{{ album.cover.url}}">
+        {% endif %}
+        <div class="artist">by {{ album.artist }}</div>
         <time class="date">added
             {{ album.created_at }}
         </time>

@@ -12,7 +12,7 @@
             <p>Are you sure you want to delete {{ album.title }}?</p>
             <div>
                 <button type="submit">Delete Album</button><br />
-                <a href="{% url 'album_detail' %}">Cancel</a>
+                <a href="{% url 'album_detail' pk=album.pk %}">Cancel</a>
             </div>
         </form>
     </div>

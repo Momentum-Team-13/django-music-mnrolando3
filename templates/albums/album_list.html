@@ -12,11 +12,11 @@
     <div class="album_list">
         {% for album in albums %}
         <div class="album">
-            <h3><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h3>
+            <div class="title"><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></div>
             {% if album.cover %}
             <img src="{{ album.cover.url}}">
             {% endif %}
-            <div>by {{ album.artist }}</div><br>
+            <div class="artist">by {{ album.artist }}</div>
             <time class="date">added
                 {{ album.created_at }}
             </time>
