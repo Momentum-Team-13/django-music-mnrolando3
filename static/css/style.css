@@ -3,8 +3,9 @@
 }
 
 .header{
-    border: 5px solid blue;
-    width: fit-content;
+    color: white;
+    background-color: teal;
+    /* width: fit-content; */
 }
 
 .album_list {
@@ -17,7 +18,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 5px solid purple;
+    border: 2px solid lightgray;
+    border-radius: 10px;
     padding: 2px;
     margin: 5px;
     width: fit-content;
