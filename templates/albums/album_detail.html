@@ -1,26 +1,22 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>{{ album.title }}</h1>
 
-<body>
+<body id="page">
 
-    <main class="main">
-        <div class="album">
-            <div>by {{ album.artist }}</div><br>
-            <time class="date">added
-                {{ album.created_at }}
-            </time>
-        </div>
-        <p>
-            <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
-            <a class="red" href="{% url 'delete_album' pk=album.pk %}">Delete Album</a>
-        </p>
-        <br>
-        <div>
-            <a href="{% url 'album_list' %}">Return to All Albums</a>
-        </div>
-    </main>
+    <h1 class="header">{{ album.title }}</h1>
+
+    <div class="album">
+        <div>by {{ album.artist }}</div><br>
+        <time class="date">added
+            {{ album.created_at }}
+        </time>
+    </div>
+    <p>
+        <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
+        <a href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
+        <a href="{% url 'album_list' %}">Return to All Albums</a>
+    </p>
 
 </body>
 

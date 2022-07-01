@@ -13,9 +13,9 @@ Your Django app should allow you to do the following:
 
 - See a list of all albums on the homepage DONE
 - Create a new album DONE
-- See a detail page for one existing album 
-- Edit an existing album
-- Delete an existing album
+- See a detail page for one existing album DONE
+- Edit an existing album DONE
+- Delete an existing album DONE
 
 Your app should have at least minimal styling. It's pretty practical to use a CSS library like [Bulma](https://bulma.io/) or [Picnic](https://picnicss.com/), though you can write custom CSS if you want to. Just remember that **for this project, functionality is a higher priority than styling**.
 

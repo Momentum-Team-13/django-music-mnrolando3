@@ -1,16 +1,21 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Delete Album</h1>
 
-<div>
-    <form action="{% url 'delete_album' pk=album.pk %}" method="POST">
-        {% csrf_token %}
-        <p>Are you sure you want to delete {{ album.title }}?</p>
-        <div>
-            <button type="submit">Delete Album</button><br />
-            <a href="{% url 'album_detail' %}">Cancel</a>
-        </div>
-    </form>
-</div>
+<body id="page">
+
+    <h1 class="header">Delete Album</h1>
+
+    <div class="form">
+        <form class="delete_form" action="{% url 'delete_album' pk=album.pk %}" method="POST">
+            {% csrf_token %}
+            <p>Are you sure you want to delete {{ album.title }}?</p>
+            <div>
+                <button type="submit">Delete Album</button><br />
+                <a href="{% url 'album_detail' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
+
+</body>
 {% endblock %}

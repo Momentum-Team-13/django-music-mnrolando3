@@ -1,11 +1,48 @@
-.main {
+#page {
+    font-family: Arial, sans-serif;
+}
+
+.header{
+    border: 5px solid blue;
+    width: fit-content;
+}
+
+.album_list {
+    display: flex;
     border: 5px solid black;
+    width: fit-content;
 }
 
 .album {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     border: 5px solid purple;
+    padding: 2px;
+    margin: 5px;
+    width: fit-content;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 10px;
 }
 
 .date {
     border: 5px solid greenyellow;
+    font-size: x-small;
+}
+
+.form{}
+
+.add_form{}
+
+.edit_form{}
+
+.delete_form{}
+
+button{}
+
+link {
+
 }

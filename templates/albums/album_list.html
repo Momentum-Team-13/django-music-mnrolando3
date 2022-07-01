@@ -3,14 +3,13 @@
 
 {% block content %}
 
-<h1>All Albums</h1>
+<body id="page">
 
-<div><a href="{% url 'add_album' %}">Add New Album</a></div>
-<br>
+    <h1 class="header">All Albums</h1>
 
-<body>
+    <div><a href="{% url 'add_album' %}">Add New Album</a></div><br>
 
-    <main class="main">
+    <div class="album_list">
         {% for album in albums %}
         <div class="album">
             <h3><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></h3>
@@ -20,7 +19,7 @@
             </time>
         </div>
         {% endfor %}
-    </main>
+    </div>
 
 </body>
 
