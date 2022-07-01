@@ -8,4 +8,5 @@ class AlbumForm(forms.ModelForm):
         fields = [
             'title',
             'artist',
+            'cover',
         ]
