@@ -6,7 +6,7 @@
 <h1 class="header">Edit Album</h1>
 
 <div class="form">
-    <form class="edit_form" action="{% url 'edit_album' pk=album.pk %}" method="POST">
+    <form class="edit_form" action="{% url 'edit_album' pk=album.pk %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.as_p }}
         <div>
