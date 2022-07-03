@@ -18,6 +18,7 @@
         {% for track in album.album_tracks.all %}
         <div>{{ track }}</div>
         {% endfor %}
+    </div>
 
         <div class="form">
             <form class="track_form" action="{% url 'album_detail' pk=album.pk %}" method="POST">
@@ -28,7 +29,6 @@
                 <button type="submit">Add Track</button>
             </div>
         </div>
-    </div>
     <br>
     <p>
         <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
