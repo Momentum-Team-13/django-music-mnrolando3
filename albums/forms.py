@@ -1,5 +1,5 @@
 from django import forms
-from .models import Album
+from .models import Album, Track
 
 
 class AlbumForm(forms.ModelForm):
@@ -9,4 +9,12 @@ class AlbumForm(forms.ModelForm):
             'title',
             'artist',
             'cover',
+        ]
+
+
+class TrackForm(forms.ModelForm):
+    class Meta:
+        model = Track
+        fields = [
+            'track_title',
         ]
