@@ -16,7 +16,7 @@
             {% if album.cover %}
             <img src="{{ album.cover.url}}" alt="Album Cover">
             {% endif %}
-            <div class="artist">by {{ album.artist }}</div>
+            <div>by<a class="artist" href="">{{ album.artist }}</a></div>
             <time class="date">added
                 {{ album.created_at }}
             </time>

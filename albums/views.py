@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Album
+from .models import Album, Artist
 from .forms import AlbumForm, TrackForm
 
 
@@ -75,3 +75,8 @@ def add_track(request, pk):
 #     if request.method == "POST":
 #         track.delete()
 #         return redirect(to='album_detail', pk=album_pk)
+
+
+def artist_detail(request, pk):
+    artist = get_object_or_404(Artist, pk=pk)
+    return render(request, "albums/artist_detail.html", {"artist": artist})

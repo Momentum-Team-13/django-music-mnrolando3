@@ -28,6 +28,7 @@ urlpatterns = [
     path('albums/<int:pk>/', views.add_track, name='album_detail'),
     path('albums/<int:pk>/edit', views.edit_album, name='edit_album'),
     path('albums/<int:pk>/delete', views.delete_album, name='delete_album'),
+    path('artists/<int:pk>/', views.artist_detail, name='artist_detail'),
 ]
 
 # from Uptact
