@@ -19,15 +19,9 @@
         <div>{{ track }}</div>
         {% endfor %}
     </div>
-
-        <div class="form">
-            <form class="track_form" action="{% url 'album_detail' pk=album.pk %}" method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-            </form>
-        </div>
     <br>
     <p>
+        <a href="{% url 'add_track' pk=album.pk %}">Add Track</a><br>
         <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
         <a href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>
         <a href="{% url 'album_list' %}">Return to All Albums</a>

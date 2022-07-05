@@ -24,9 +24,9 @@ def add_album(request):
     return render(request, "albums/add_album.html", {"form": form})
 
 
-# def album_detail(request, pk):
-#     album = get_object_or_404(Album, pk=pk)
-#     return render(request, "albums/album_detail.html", {"album": album})
+def album_detail(request, pk):
+    album = get_object_or_404(Album, pk=pk)
+    return render(request, "albums/album_detail.html", {"album": album})
 
 
 def edit_album(request, pk):
@@ -63,6 +63,7 @@ def add_track(request, pk):
             new_track = form.save(commit=False)
             new_track.album = album
             new_track.save()
+            return redirect(to='album_detail', pk=pk)
 
-    return render(request, "albums/album_detail.html", {"form": form,
+    return render(request, "albums/add_track.html", {"form": form,
                   "album": album})
