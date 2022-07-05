@@ -67,3 +67,11 @@ def add_track(request, pk):
 
     return render(request, "albums/album_detail.html", {"form": form,
                   "album": album})
+
+
+# def delete_track(request, pk):
+#     track = get_object_or_404(Track, pk=pk)
+#     album_pk = track.album.pk
+#     if request.method == "POST":
+#         track.delete()
+#         return redirect(to='album_detail', pk=album_pk)

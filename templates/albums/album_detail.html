@@ -23,10 +23,10 @@
         <form class="track_form" action="{% url 'album_detail' pk=album.pk %}" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-        <div>
-            <button type="submit">Add Track</button>
-        </div>
-    </form>
+            <div>
+                <button type="submit">Add Track</button>
+            </div>
+        </form>
     </div>
     <br>
     <p>

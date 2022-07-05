@@ -5,7 +5,8 @@ from django.db import models
 
 
 class Track(models.Model):
-    track_title = models.CharField(max_length=500, null=True, blank=True)
+    track_title = models.CharField(max_length=500, null=True, blank=True,
+                                   unique=True)
     album = models.ForeignKey("Album", on_delete=models.CASCADE,
                               related_name='album_tracks', null=True,
                               blank=True)
