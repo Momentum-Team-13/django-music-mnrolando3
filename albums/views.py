@@ -12,16 +12,18 @@ def album_list(request):
 
 def add_album(request):
     if request.method == 'GET':
-        form = AlbumForm() and ArtistForm()
-        # if add_contact is requested, the form should be the ContactForm
+        album_form = AlbumForm()
+        artist_form = ArtistForm()
     else:
-        form = AlbumForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
+        album_form = AlbumForm(request.POST, request.FILES)
+        artist_form = ArtistForm(request.POST)
+        if album_form.is_valid() and artist_form.is_valid():
+            album_form.save()
+            artist_form.save()
             return redirect(to='album_list')
             # else post the data; if form is valid save and return to list
 
-    return render(request, "albums/add_album.html", {"form": form})
+    return render(request, "albums/add_album.html", {"album_form": album_form, "artist_form": artist_form})
 
 
 # def album_detail(request, pk):

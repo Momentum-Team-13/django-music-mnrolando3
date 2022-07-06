@@ -16,9 +16,13 @@ class Album(models.Model):
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
                                related_name='albums', null=True,
                                blank=True)
+    new_artist = models.CharField(max_length=250, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True,
                                       blank=True)
     cover = models.ImageField(upload_to='images/', null=True, blank=True)
+
+    def __str__(self):
+        return f'{self.title}'
 
 
 class Track(models.Model):

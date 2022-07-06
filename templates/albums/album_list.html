@@ -13,13 +13,14 @@
         {% for album in albums %}
         <div class="album">
             <div class="title"><a href="{% url 'album_detail' pk=album.pk %}">{{ album.title }}</a></div>
+
             {% if album.cover %}
             <img src="{{ album.cover.url}}" alt="Album Cover">
             {% endif %}
-            <div>by<a class="artist" href="">{{ album.artist }}</a></div>
-            <time class="date">added
-                {{ album.created_at }}
-            </time>
+
+            <div>by<a class="artist" href="{% url 'artist_detail' pk=album.artist.pk %}">{{ album.artist }}</a></div>
+
+            <time class="date">added {{ album.created_at }}</time>
         </div>
         {% endfor %}
     </div>

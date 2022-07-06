@@ -10,15 +10,18 @@
         {% if album.cover %}
         <img src="{{ album.cover.url}}">
         {% endif %}
-        <div>by<a class="artist" href="">{{ album.artist }}</a></div>
-    </div>
-    <br>
+
+        <div>by {{ album.artist }}</div>
+
+    </div><br>
+
     <div class="track_list">
         <div>Track List:</div>
         {% for track in album.tracks.all %}
         <div>{{ track }}</div>
         {% endfor %}
     </div>
+
     <div class="form">
         <form class="track_form" action="{% url 'album_detail' pk=album.pk %}" method="POST">
             {% csrf_token %}
@@ -27,8 +30,8 @@
                 <button type="submit">Add Track</button>
             </div>
         </form>
-    </div>
-    <br>
+    </div><br>
+
     <p>
         <a href="{% url 'edit_album' pk=album.pk %}">Edit Album</a><br>
         <a href="{% url 'delete_album' pk=album.pk %}">Delete Album</a><br>

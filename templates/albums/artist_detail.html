@@ -6,8 +6,15 @@
 
     <h1 class="header">{{ artist.name }}</h1>
 
-    <div>
-    <div class="album_list">
+    <div class="artist_album_list">
         <div>Album List:</div>
+        {% for album in artist.albums.all %} 
+        <div>{{ album }}</div>
+        {% endfor %}
+    </div><br>
+    <a href="{% url 'album_list' %}">Return to All Albums</a>
 
-    </div>
+
+</body>
+
+{% endblock %}
