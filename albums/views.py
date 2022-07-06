@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Album, Artist
-from .forms import AlbumForm, TrackForm
+from .forms import AlbumForm, TrackForm, ArtistForm
 
 
 # Create your views here.
@@ -12,7 +12,7 @@ def album_list(request):
 
 def add_album(request):
     if request.method == 'GET':
-        form = AlbumForm()
+        form = AlbumForm() and ArtistForm()
         # if add_contact is requested, the form should be the ContactForm
     else:
         form = AlbumForm(request.POST, request.FILES)
