@@ -57,7 +57,16 @@ def edit_album(request, pk):
     else:
         form = AlbumForm(request.POST, request.FILES, instance=album)
         if form.is_valid():
-            form.save()
+            album = form.save(commit=False)
+            artist_list = Artist.objects.filter(name=album.add_artist_name)
+            if artist_list:
+                album.artist = artist_list[0]
+            else:
+                new_artist = Artist()
+                new_artist.name = album.add_artist_name
+                new_artist.save()
+                album.artist = new_artist
+            album.save()
             return redirect(to='album_detail', pk=pk)
 
     return render(request, "albums/edit_album.html", {"form": form,
