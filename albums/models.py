@@ -15,7 +15,7 @@ class Album(models.Model):
     title = models.CharField(max_length=250, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
                                related_name='albums', null=True, blank=True)
-    add_artist_name = models.CharField(max_length=250, null=True, blank=True)
+    add_artist_name = models.CharField(max_length=250)
     created_at = models.DateTimeField(auto_now_add=True, null=True,
                                       blank=True)
     cover = models.ImageField(upload_to='images/', null=True, blank=True)
@@ -25,8 +25,7 @@ class Album(models.Model):
 
 
 class Track(models.Model):
-    track_title = models.CharField(max_length=500, null=True, blank=True,
-                                   unique=True)
+    track_title = models.CharField(max_length=500, unique=True)
     album = models.ForeignKey(Album, on_delete=models.CASCADE,
                               related_name='tracks', null=True,
                               blank=True)
