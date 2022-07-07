@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Album, Artist
-from .forms import AlbumForm, TrackForm, ArtistForm
+from .forms import AlbumForm, TrackForm
 
 
 # Create your views here.
@@ -10,20 +10,39 @@ def album_list(request):
                   {"albums": albums})
 
 
+# Susan's code
 def add_album(request):
     if request.method == 'GET':
-        album_form = AlbumForm()
-        artist_form = ArtistForm()
+        form = AlbumForm()
     else:
-        album_form = AlbumForm(request.POST, request.FILES)
-        artist_form = ArtistForm(request.POST)
-        if album_form.is_valid() and artist_form.is_valid():
-            album_form.save()
-            artist_form.save()
+        form = AlbumForm(request.POST, request.FILES)
+        if form.is_valid():
+            album = form.save(commit=False)
+            artist_list = Artist.objects.filter(name=album.add_artist_name)
+            if artist_list:
+                album.artist = artist_list[0]
+            else:
+                new_artist = Artist()
+                new_artist.name = album.add_artist_name
+                new_artist.save()
+                album.artist = new_artist
+            album.save()
             return redirect(to='album_list')
             # else post the data; if form is valid save and return to list
 
-    return render(request, "albums/add_album.html", {"album_form": album_form, "artist_form": artist_form})
+    return render(request, "albums/add_album.html", {"form": form})
+
+
+# def add_album(request):
+#     if request.method == 'GET':
+#         form = AlbumForm()
+#     else:
+#         form = AlbumForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect(to='album_list')
+
+#     return render(request, "albums/add_album.html", {"form": form})
 
 
 # def album_detail(request, pk):

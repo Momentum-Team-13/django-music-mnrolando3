@@ -16,6 +16,8 @@
 
             {% if album.cover %}
             <img src="{{ album.cover.url}}" alt="Album Cover">
+            {% else %}
+            <img src="static/album_placeholder.jpeg">
             {% endif %}
 
             <div>by<a class="artist" href="{% url 'artist_detail' pk=album.artist.pk %}">{{ album.artist }}</a></div>

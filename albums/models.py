@@ -14,9 +14,8 @@ class Artist(models.Model):
 class Album(models.Model):
     title = models.CharField(max_length=250, null=True, blank=True)
     artist = models.ForeignKey(Artist, on_delete=models.CASCADE,
-                               related_name='albums', null=True,
-                               blank=True)
-    new_artist = models.CharField(max_length=250, null=True, blank=True)
+                               related_name='albums', null=True, blank=True)
+    add_artist_name = models.CharField(max_length=250, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True, null=True,
                                       blank=True)
     cover = models.ImageField(upload_to='images/', null=True, blank=True)
